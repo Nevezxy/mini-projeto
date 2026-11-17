@@ -50,3 +50,21 @@ def buscar(indice, palavra):
     else:
         # retorna uma lista vazia caso a palavra não seja encontrada
         return []
+    
+def buscar_e(indice, palavras):
+    # verifica se a lista de palavras esta vazia
+    if len(palavras) == 0:
+        return []
+
+    # pega as linhas onde aparece a primeira palavra
+    resultado = set(buscar(indice, palavras[0]))
+
+    # percorre todas as palavras recebidas na busca
+    for palavra in palavras:
+        # pega as linhas onde a palavra aparece
+        linhas = set(buscar(indice, palavra))
+
+        # mantem apenas as linhas que possuem todas as palavras
+        resultado = resultado & linhas
+
+    return sorted(resultado)
