@@ -35,3 +35,18 @@ def construir_indice(texto):
 
     # retorna o indice completo
     return indice
+
+def buscar(indice, palavra):
+    # transforma a palavra em minuscula para facilitar a busca
+    palavra = palavra.lower()
+
+    # verifica se a palavra existe no indice
+    if palavra in indice:
+        # pega os numeros das linhas onde a palavra aparece
+        linhas = indice[palavra]
+
+        # organiza os numeros das linhas em ordem crescente
+        return sorted(linhas)
+    else:
+        # retorna uma lista vazia caso a palavra não seja encontrada
+        return []

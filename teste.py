@@ -1,12 +1,12 @@
-from indice_invertido import construir_indice
+from indice_invertido import construir_indice, buscar
 
-texto = """Python,dados!algoritmos.
-Dados e Python.
-Programação,programacao
-
-Python Python"""
+texto = """Python e dados
+Dados e algoritmos
+Python e algoritmos"""
 
 indice = construir_indice(texto)
 
-for palavra in indice:
-    print(palavra, ":", indice[palavra])
+print(buscar(indice, "python"))
+print(buscar(indice, "dados"))
+print(buscar(indice, "java"))
+print(buscar(indice, "PYTHON"))
