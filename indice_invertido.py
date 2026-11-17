@@ -68,3 +68,17 @@ def buscar_e(indice, palavras):
         resultado = resultado & linhas
 
     return sorted(resultado)
+
+def buscar_ou(indice, palavras):
+    # cria um conjunto vazio para guardar as linhas encontradas
+    resultado = set()
+
+    # percorre todas as palavras recebidas na busca
+    for palavra in palavras:
+        # pega as linhas onde a palavra aparece
+        linhas = set(buscar(indice, palavra))
+
+        # junta as linhas encontradas sem repetir numeros
+        resultado = resultado | linhas
+
+    return sorted(resultado)

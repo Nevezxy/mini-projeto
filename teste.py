@@ -7,7 +7,8 @@ Python dados algoritmos"""
 
 indice = construir_indice(texto)
 
-print(buscar_e(indice, ["python", "dados"]))
-print(buscar_e(indice, ["dados", "algoritmos"]))
-print(buscar_e(indice, ["python", "java"]))
-print(buscar_e(indice, ["python", "dados", "algoritmos"]))
+print(buscar_ou(indice, ["python", "dados"]))
+print(buscar_ou(indice, ["dados", "algoritmos"]))
+print(buscar_ou(indice, ["python", "java"]))
+print(buscar_ou(indice, ["java", "c++"]))
+print(buscar_ou(indice, ["python", "dados", "algoritmos"]))
