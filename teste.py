@@ -1,7 +1,7 @@
 from indice_invertido import construir_indice
 
-texto = """Python e dados
-Dados e algoritmos
-Python e algoritmos"""
+texto = """Python,dados!
+Dados e algoritmos.
+Programação em Python."""
 
 construir_indice(texto)

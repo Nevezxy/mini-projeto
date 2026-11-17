@@ -1,18 +1,30 @@
 def construir_indice(texto):
-    # dicionario vazio onde as palavras serão armazenadas
+    # dicionario vazio para armazenar as palavras
     indice = {}
 
     # separa o texto em varias linhas
     linhas = texto.split("\n")
     numero = 1
 
-    # percorre todas as linhas do texto
-    for linha in linhas:
-        # mostra o numero e o conteudo de cada linha
-        print(numero, linha)
+    # sinais de pontuação que serão removidos do texto
+    pontuacoes = ".,!?;:()[]{}\"'-"
 
-        # passa para o numero da proxima linha
+    # percorre cada linha do texto
+    for linha in linhas:
+
+        # substitui os sinais de pontuação por espaços
+        for sinal in pontuacoes:
+            linha = linha.replace(sinal, " ")
+
+        # transforma todas as letras em minusculas e separa as palavras
+        palavras = linha.lower().split()
+
+        # percorre as palavras encontradas na linha
+        for palavra in palavras:
+            # mostra o numero da linha e a palavra encontrada
+            print(numero, palavra)
+
+        # aumenta o contador para a proxima linha
         numero = numero + 1
 
-    # retorna o indice criado
     return indice
