@@ -119,4 +119,31 @@ assert buscar_ou(indice_tres, ["python", "dados", "algoritmos"]) == [1, 2, 3]
 print("Teste 10 passou!")
 
 
+# TESTE 11 - PONTUACAO ADICIONAL
+# verifica se outros sinais tambem sao retirados das palavras
+indice_pontuacao_extra = construir_indice("«Python»—dados…algoritmos/estrutura")
+
+assert indice_pontuacao_extra["python"] == {1}
+assert indice_pontuacao_extra["dados"] == {1}
+assert indice_pontuacao_extra["algoritmos"] == {1}
+assert indice_pontuacao_extra["estrutura"] == {1}
+assert buscar(indice_pontuacao_extra, "(PYTHON),") == [1]
+
+print("Teste 11 passou!")
+
+
+# TESTE 12 - CONSULTAS NAO PODEM MODIFICAR O INDICE
+# guarda uma copia para comparar depois das consultas
+indice_original = construir_indice("python dados\npython algoritmos")
+copia = {palavra: conjunto.copy() for palavra, conjunto in indice_original.items()}
+
+buscar(indice_original, "python")
+buscar_e(indice_original, ["python", "dados"])
+buscar_ou(indice_original, ["python", "algoritmos"])
+
+assert indice_original == copia
+
+print("Teste 12 passou!")
+
+
 print("\nTodos os testes funcionais passaram!")

@@ -14,7 +14,7 @@ def busca_varredura(texto, palavra):
     numero = 1
 
     # sinais que serão retirados durante a busca
-    pontuacoes = ".,!?;:()[]{}\"'-"
+    pontuacoes = ".,!?;:()[]{}\"'-–—…/\\«»_@#$%&*+=<>|~`^“”‘¡¿·•"
 
     # percorre todas as linhas do texto
     for linha in linhas:

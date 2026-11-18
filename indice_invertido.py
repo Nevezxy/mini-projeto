@@ -1,3 +1,14 @@
+def limpar_texto(texto):
+    # sinais de pontuação que serão substituidos por espaços
+    # A lista foi ampliada para tratar outros sinais comuns.
+    pontuacoes = ".,!?;:()[]{}\"'-–—…/\\«»_@#$%&*+=<>|~`^“”‘¡¿·•"
+
+    for sinal in pontuacoes:
+        texto = texto.replace(sinal, " ")
+
+    return texto
+
+
 def construir_indice(texto):
     # dicionario vazio para guardar as palavras e suas linhas
     indice = {}
@@ -6,15 +17,11 @@ def construir_indice(texto):
     linhas = texto.split("\n")
     numero = 1
 
-    # sinais de pontuação que serão substituidos por espaços
-    pontuacoes = ".,!?;:()[]{}\"'-"
-
     # percorre todas as linhas do texto
     for linha in linhas:
 
         # remove os sinais de pontuação da linha
-        for sinal in pontuacoes:
-            linha = linha.replace(sinal, " ")
+        linha = limpar_texto(linha)
 
         # deixa todas as palavras em minusculo e separa elas
         palavras = linha.lower().split()
@@ -36,9 +43,16 @@ def construir_indice(texto):
     # retorna o indice completo
     return indice
 
+
 def buscar(indice, palavra):
     # transforma a palavra em minuscula para facilitar a busca
-    palavra = palavra.lower()
+    palavras = limpar_texto(palavra).lower().split()
+
+    # verifica se foi recebida somente uma palavra
+    if len(palavras) != 1:
+        return []
+
+    palavra = palavras[0]
 
     # verifica se a palavra existe no indice
     if palavra in indice:
@@ -50,7 +64,8 @@ def buscar(indice, palavra):
     else:
         # retorna uma lista vazia caso a palavra não seja encontrada
         return []
-    
+
+
 def buscar_e(indice, palavras):
     # verifica se a lista de palavras esta vazia
     if len(palavras) == 0:
@@ -59,8 +74,8 @@ def buscar_e(indice, palavras):
     # pega as linhas onde aparece a primeira palavra
     resultado = set(buscar(indice, palavras[0]))
 
-    # percorre todas as palavras recebidas na busca
-    for palavra in palavras:
+    # percorre as demais palavras recebidas na busca
+    for palavra in palavras[1:]:
         # pega as linhas onde a palavra aparece
         linhas = set(buscar(indice, palavra))
 
@@ -68,6 +83,7 @@ def buscar_e(indice, palavras):
         resultado = resultado & linhas
 
     return sorted(resultado)
+
 
 def buscar_ou(indice, palavras):
     # cria um conjunto vazio para guardar as linhas encontradas

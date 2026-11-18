@@ -11,7 +11,7 @@ def busca_varredura(texto, palavra):
     linhas = texto.split("\n")
     numero = 1
 
-    pontuacoes = ".,!?;:()[]{}\"'-"
+    pontuacoes = ".,!?;:()[]{}\"'-–—…/\\«»_@#$%&*+=<>|~`^“”‘¡¿·•"
 
     for linha in linhas:
         for sinal in pontuacoes:
