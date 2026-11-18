@@ -1,12 +1,18 @@
 # Diário de bordo — Uso de inteligência artificial
 
-Este diário resume como a inteligência artificial foi utilizada durante o desenvolvimento. As orientações foram estudadas e testadas no código pelo aluno; a IA foi usada para explicar conceitos, ajudar a interpretar erros, sugerir testes e apoiar a organização do trabalho.
+Este diário resume o uso de inteligência artificial durante o desenvolvimento do mini-projeto. A IA foi utilizada como apoio para explicar conceitos, ajudar a interpretar erros, sugerir testes e revisar a organização da entrega. As orientações foram verificadas por meio da execução dos códigos e da conferência dos resultados.
 
-| Etapa | Dúvida ou orientação solicitada | O que foi feito e como foi verificado |
+| Etapa | Consulta ou orientação solicitada | Aplicação e verificação |
 |---|---|---|
-| Organização inicial | Como começar o mini-projeto e separar as etapas de desenvolvimento. | O trabalho foi dividido em construção do índice, consultas, interface, testes e experimentos. |
-| Git | Como configurar nome e e-mail apenas neste repositório e resolver problemas de inicialização/configuração. | Foram executados comandos do Git no terminal e conferidos o status, os commits e o repositório remoto. |
-| Construção do índice | Como separar linhas, numerá-las e guardar palavras e linhas em um dicionário. | O código foi executado com textos pequenos e os conjuntos retornados foram conferidos. |
-| Testes funcionais | Como montar os testes e interpretar os resultados. | Foram executados testes com texto vazio, repetições, linhas vazias, pontuação, acentos e consultas combinadas. |
-| Desempenho | Como medir tempos com `time.perf_counter()` e comparar varredura e índice. | Foram executados os scripts de experimentos e os tempos foram registrados para análise. |
-| Documentação e revisão | Como organizar a entrega e conferir os requisitos do enunciado. | Os arquivos foram revisados, os testes foram ampliados e foram preparados README, relatório e este diário. |
+| Planejamento | Como dividir o projeto em etapas menores e implementar um índice invertido em Python. | O desenvolvimento foi separado em construção do índice, funções de busca, menu, testes e experimentos. |
+| Git | Como configurar nome e e-mail somente no repositório do trabalho e investigar erros do Git. | Foram executados comandos no terminal e conferidos o status, os commits e o repositório remoto. |
+| Construção do índice | Como guardar cada palavra e os números das linhas em um dicionário de conjuntos. | O índice foi executado com textos de exemplo e as chaves e conjuntos foram conferidos. |
+| Consultas | Como implementar busca simples, busca E e busca OU. | As funções foram testadas com palavras existentes, inexistentes e combinações de palavras. |
+| Menu | Como permitir que o usuário escolha o tipo de consulta. | O menu foi executado no terminal e as opções foram verificadas manualmente. |
+| Testes funcionais | Como criar testes para casos comuns e extremos. | O arquivo de testes foi executado e as respostas esperadas foram comparadas com os resultados. |
+| Experimentos | Como medir o tempo usando `time.perf_counter()` e comparar as estratégias. | Os scripts foram executados no computador do aluno e os tempos foram registrados. |
+| Relatório e entrega | Como organizar as tabelas, responder às questões e estruturar os arquivos finais. | Os resultados medidos foram colocados no relatório e os documentos de entrega foram revisados. |
+
+## Reflexão sobre o uso da IA
+
+A inteligência artificial ajudou principalmente a dividir o trabalho em etapas e esclarecer dúvidas que surgiram durante a implementação. Procurei utilizar exemplos simples, testar as orientações no meu ambiente e conferir os resultados antes de considerar cada etapa concluída. A ferramenta foi utilizada como apoio ao aprendizado, e não como substituta da execução e compreensão do código.
